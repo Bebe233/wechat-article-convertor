@@ -1,0 +1,29 @@
+---
+description: WeChat article workflow constraints for facts, drafts, snippets, and HTML output
+globs: articles/**, snippets/**, docs/design-system.md
+alwaysApply: false
+---
+
+# 微信公众号工作流约束
+
+## 排版
+
+- `wechat.html` 必须由 `snippets/` 片段拼接，样式遵循 `docs/design-system.md` token
+- 禁止在 `wechat.html` 中引入 `<script>`、`<iframe>`、外链 CSS/JS 或非常规标签
+- 禁止为排版自由发明未在 design-system 登记的新样式
+
+## 配图
+
+- 统一使用：`<!-- IMAGE: {desc} | 比例 {ratio} | 备注 {optional} -->`
+- 默认不写外链 `<img>`；公众号后台手动上传
+
+## 文稿
+
+- `facts.md` / `raw.md` 默认中文
+- 语气由用户每次指定，不在规则中写死
+- 禁止编造未在调研来源中出现的功能；不确定写入「待核实」
+
+## 流程
+
+- 须先确认 `facts.md`，再写 `raw.md`；须先确认 `raw.md`，再写 `wechat.html`
+- 未经用户确认不得跳过卡点生成下游文件
