@@ -27,7 +27,7 @@ disable-model-invocation: true
 
 ## 工作步骤
 
-1. 读取 `raw.md`，识别标题（首个 `#` 或文首标题行）、`##`/`###`、段落、引用、列表、分割线、highlight 标注块、CTA
+1. 读取 `raw.md`，识别标题（首个 `#` 或文首标题行）、`【lead】`/`【pull】`、`##`/`###`、段落、引用、列表、分割线、highlight 标注块、CTA
 2. 按 [reference.md](reference.md) 选择对应 snippet 文件，读取模板，将 `{{content}}` 替换为内容（保留允许的 `strong`/`em`/`a`）
 3. 将 `raw.md` 中的配图占位（若有）原样或规范化为 design-system 规定的 `<!-- IMAGE: ... -->` 插入对应位置
 4. 写入 `articles/<slug>/wechat.html`
