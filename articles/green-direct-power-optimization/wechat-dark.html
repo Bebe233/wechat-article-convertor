@@ -12,13 +12,13 @@
 
 -->
 
-<section style="max-width:100%;padding:20px 16px;background-color:#121816;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">
+<section style="max-width:100%;padding:20px 16px;background-color:#121816;letter-spacing:2px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">
 
-<p style="margin:20px 0;padding:0;font-size:17px;line-height:1.85;color:#9eaaa4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">绿电直连、风光消纳与储能、氢能协同，正在从政策试点走进可研与方案比选的主流程。</p>
+<p style="margin:20px 0;padding:0;text-indent:2em;font-size:17px;line-height:1.85;color:#9eaaa4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">绿电直连、风光消纳与储能、氢能协同，正在从政策试点走进可研与方案比选的主流程。</p>
 
-<p style="margin:20px 0;padding:0;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">从业者的日常往往绕不开三件事：按<strong>省区与接入电压</strong>对齐电价与敏感性假设，用<strong>全年 8760 小时</strong>曲线刻画负荷与出力，再在多情景下比较<strong>度电成本、电网下网占比与弃电率</strong>。</p>
+<p style="margin:20px 0;padding:0;text-indent:2em;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">从业者的日常往往绕不开三件事：按<strong>省区与接入电压</strong>对齐电价与敏感性假设，用<strong>全年 8760 小时</strong>曲线刻画负荷与出力，再在多情景下比较<strong>度电成本、电网下网占比与弃电率</strong>。</p>
 
-<p style="margin:20px 0;padding:0;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">若每一步分散在不同表格与离线脚本里，改一个参数就要整表重抄，求解过程也难以向评审方交代。</p>
+<p style="margin:20px 0;padding:0;text-indent:2em;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">若每一步分散在不同表格与离线脚本里，改一个参数就要整表重抄，求解过程也难以向评审方交代。</p>
 
 <blockquote style="margin:20px 0;padding:12px 16px;border-left:3px solid #3dd68c;background-color:#1a2420;font-size:15px;line-height:1.8;color:#8a9690;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;"><strong style="color:#d6ddd8;">绿电直连优化测算系统</strong>（<em>Green Direct Power &amp; Hydrogen Synergy Optimization Dashboard</em>）把「参数准备 → 优化求解 → 结果复核 → 导出归档」收进同一 Web 工作台：前端按省区、电压与负荷类型联动配置，底层调用标注为 <strong style="color:#d6ddd8;">CPLEX</strong> 的 <strong style="color:#d6ddd8;">MILP（混合整数线性规划）</strong> 引擎，并在控制台实时输出迭代与分支定界日志，让测算结果可追溯、可讨论，而不是黑盒一键出数。</blockquote>
 
@@ -34,13 +34,13 @@
 
 <p style="margin:18px 0;padding:0 0 0 8px;font-size:15px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;"><span style="margin-right:6px;">👥</span><strong>团队协作弱</strong>：多人并行试算时，缺少队列、历史记录与权限分工，容易互相覆盖或重复劳动。</p>
 
-<p style="margin:20px 0;padding:0;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">以上问题不意味着必须抛弃 Excel；许多团队仍以工作簿为「参数真相来源」。关键在于：能否在保留表格习惯的前提下，把<strong>提交、求解、展示、导出</strong>连成一条清晰流水线。</p>
+<p style="margin:20px 0;padding:0;text-indent:2em;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">以上问题不意味着必须抛弃 Excel；许多团队仍以工作簿为「参数真相来源」。关键在于：能否在保留表格习惯的前提下，把<strong>提交、求解、展示、导出</strong>连成一条清晰流水线。</p>
 
 <h2 style="margin:48px 0 24px;padding:10px 14px;font-size:20px;font-weight:bold;color:#f2f6f4;line-height:1.4;background-color:#152820;border-left:4px solid #3dd68c;border-radius:0 6px 6px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">方案：从计算准备到 Excel，一站完成</h2>
 
-<p style="margin:20px 0;padding:0;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">工作台按任务阶段组织界面：<strong>计算准备</strong>集中录入情景；<strong>启动优化测算</strong>后进入队列；<strong>结果展示</strong>读取 KPI、曲线与明细；需要留档时<strong>导出结果 Excel</strong>。</p>
+<p style="margin:20px 0;padding:0;text-indent:2em;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">工作台按任务阶段组织界面：<strong>计算准备</strong>集中录入情景；<strong>启动优化测算</strong>后进入队列；<strong>结果展示</strong>读取 KPI、曲线与明细；需要留档时<strong>导出结果 Excel</strong>。</p>
 
-<p style="margin:20px 0;padding:0;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">典型路径可以概括为：</p>
+<p style="margin:20px 0;padding:0;text-indent:2em;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">典型路径可以概括为：</p>
 
 <p style="margin:18px 0;padding:0 0 0 8px;font-size:15px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;"><span style="margin-right:6px;">1️⃣</span>选择<strong>目标省区市</strong>与<strong>接入电压等级</strong>，由系统联动加载该组合下的默认敏感性电价等参数（减少手工抄录）。</p>
 
@@ -82,12 +82,12 @@
 
 <h2 style="margin:48px 0 24px;padding:10px 14px;font-size:20px;font-weight:bold;color:#f2f6f4;line-height:1.4;background-color:#152820;border-left:4px solid #3dd68c;border-radius:0 6px 6px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">总结</h2>
 
-<p style="margin:20px 0;padding:0;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">如果你从事电网规划、新能源并网、售电或绿电直连政策落地相关分析工作，且需要在<strong>多情景、8760 小时、可复核求解过程</strong>下反复比选方案，这类一体化测算工作台可以减少表格与展示工具之间的来回搬运。它适合作为团队内部的<strong>试算与汇报辅助环境</strong>，而不是对审批结果的承诺。</p>
+<p style="margin:20px 0;padding:0;text-indent:2em;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">如果你从事电网规划、新能源并网、售电或绿电直连政策落地相关分析工作，且需要在<strong>多情景、8760 小时、可复核求解过程</strong>下反复比选方案，这类一体化测算工作台可以减少表格与展示工具之间的来回搬运。它适合作为团队内部的<strong>试算与汇报辅助环境</strong>，而不是对审批结果的承诺。</p>
 
-<p style="margin:20px 0;padding:0;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">公开试用/演示入口已部署，登录后即可从「计算准备」体验完整流程（可用性以现场环境为准）：</p>
+<p style="margin:20px 0;padding:0;text-indent:2em;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">公开试用/演示入口已部署，登录后即可从「计算准备」体验完整流程（可用性以现场环境为准）：</p>
 
 <p style="margin:24px 0 12px;padding:0;text-align:center;font-size:17px;font-weight:bold;color:#3dd68c;line-height:1.5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;"><a href="http://1.13.182.187:5050/" style="color:#3dd68c;text-decoration:none;">点击打开绿电直连优化测算系统 →</a></p>
 
-<p style="margin:20px 0;padding:0;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">欢迎收藏本公众号<span style="color:#3dd68c;font-weight:bold;margin-left:2px;">↓</span>，后续将继续分享电力模拟和测算方面的相关资讯。</p>
+<p style="margin:20px 0;padding:0;text-indent:2em;font-size:16px;line-height:1.85;color:#d6ddd8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">欢迎收藏本公众号<span style="color:#3dd68c;font-weight:bold;margin-left:2px;">↓</span>，后续将继续分享电力模拟和测算方面的相关资讯。</p>
 
 </section>

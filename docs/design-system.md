@@ -22,6 +22,10 @@
 | `--font-size-lead` | 导语 | `17px` |
 | `--font-size-pull` | 金句/强调段 | `18px` |
 | `--line-height-body` | 正文行高 | `1.85` |
+| `--line-height-quote` | 引用行高 | `1.8` |
+| `--line-height-cta` | CTA 行高 | `1.5` |
+| `--letter-spacing-body` | 字间距（全文） | `2px` |
+| `--text-indent-paragraph` | 段首缩进（叙事段落） | `2em` |
 | `--font-size-h2` | 二级标题 | `20px` |
 | `--font-size-h3` | 三级标题 | `18px` |
 | `--spacing-block` | 段落上下间距 | `20px 0` |
@@ -54,18 +58,25 @@
 
 ### 组件级样式摘要
 
-- **导语** `paragraph-lead.html`：`17px` / `1.85` / `#555`，块间距 `20px 0`
-- **段落** `paragraph.html`：`16px` / `1.85` / `#333`，块间距 `20px 0`
-- **金句** `pull-quote.html`：`18px` 加粗居中，`#1a1a1a`，块间距 `28px 16px`
+- **全文容器** `<section>`：`letter-spacing: 2px`（对应公众号「字间距 2」），子元素继承；Dark 变体另加 `padding: 20px 16px` 与 `--color-canvas` 背景
+- **导语** `paragraph-lead.html`：`17px` / `1.85` / `#555`，块间距 `20px 0`，**段首缩进 `2em`**
+- **段落** `paragraph.html`：`16px` / `1.85` / `#333`，块间距 `20px 0`，**段首缩进 `2em`**
+- **金句** `pull-quote.html`：`18px` 加粗居中，`#1a1a1a`，块间距 `28px 16px`（无段首缩进）
 - **H2** `h2.html`：`20px` 加粗，`#1a1a1a`，上 `28px` 下 `10px`（`## 【plain】`）
 - **H2 色条** `h2-accent.html`：`20px` 加粗，背景 `#f0faf4`，左 border `4px #07c160`，内边距 `10px 14px`，圆角 `0 6px 6px 0`，上 `48px` 下 `24px`
 - **H3** `h3.html`：`18px` 加粗，`#1a1a1a`，上 `24px` 下 `10px`
-- **引用** `quote.html`：左 border `3px #07c160`，背景 `#f7f8fa`，`15px` / `1.8`，内边距 `12px 16px`，块间距 `20px 0`
-- **列表项** `list-item.html`：`15px` / `1.85` / `#333`，圆点，块间距 `18px 0`（比正文小一号、行距略松）
-- **列表项（Emoji）** `list-item-emoji.html`：`15px` / `1.85` / `#333`，`{{emoji}}`，块间距 `18px 0`
+- **引用** `quote.html`：左 border `3px #07c160`，背景 `#f7f8fa`，`15px` / `1.8`，内边距 `12px 16px`，块间距 `20px 0`（无段首缩进）
+- **列表项** `list-item.html`：`15px` / `1.85` / `#333`，圆点，块间距 `18px 0`（无段首缩进；靠左内边距 + 符号对齐）
+- **列表项（Emoji）** `list-item-emoji.html`：`15px` / `1.85` / `#333`，`{{emoji}}`，块间距 `18px 0`（无段首缩进）
 - **分割线** `divider.html`：`1px` 实线 `#e5e5e5`，上下 `28px`
-- **高亮框** `highlight.html`：`<blockquote>`，背景 `#fff9e6`，左 border `4px #ffd666`，内边距 `14px 16px`，`16px` 斜体 / `1.85`，块间距 `20px 0`
-- **CTA** `cta.html`：居中，`#07c160` 加粗 `17px`，上 `24px` 下 `12px`
+- **高亮框** `highlight.html`：`<blockquote>`，背景 `#fff9e6`，左 border `4px #ffd666`，内边距 `14px 16px`，`16px` 斜体 / `1.85`，块间距 `20px 0`（无段首缩进）
+- **CTA** `cta.html`：居中，`#07c160` 加粗 `17px` / `1.5`，上 `24px` 下 `12px`（无段首缩进）
+
+### 段首缩进与字间距（编辑规范）
+
+- **字间距**：写在全文 `<section>` 上，值为 `2px`；勿在单个段落重复声明，除非某块需例外（须在 `raw.md` 标注）
+- **段首缩进**：仅 **导语** 与 **叙事段落**（`paragraph-lead` / `paragraph`）使用 `text-indent: 2em`（首行缩进 2 个汉字宽）
+- **不加缩进**：H2/H3、引用、高亮框、列表项、金句、CTA——这些组件靠结构符号、背景或对齐区分，不再叠加段首缩进
 
 ### 章节标题使用建议（编辑规范）
 
@@ -97,7 +108,7 @@
 - `{{content}}`：替换为已转义的纯文本或允许的内联 HTML（**仅** `strong`、`em`、`a`，且 `a` 的 `href` 须为 https）
 - `{{emoji}}`：仅用于 `list-item-emoji.html`
 - 拼接顺序：按 `raw.md` 自上而下；多个 `list-item` 连续出现时不额外插入空段
-- 外层可用单个 `<section style="...">` 包裹全文，**不得**引入 `<style>` 标签或外链 CSS
+- 外层用单个 `<section style="...">` 包裹全文，须含 `letter-spacing: 2px` 与 `--font-family`；Dark 稿另加 canvas 背景与内边距。**不得**引入 `<style>` 标签或外链 CSS
 
 ## 配图占位语法（全项目统一）
 
