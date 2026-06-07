@@ -1,29 +1,40 @@
 ---
-description: WeChat article workflow constraints for facts, drafts, snippets, and HTML output
-globs: articles/**, snippets/**, docs/design-system.md
+description: Content workflow constraints for WeChat and Xiaohongshu facts, drafts, snippets, and output
+globs: articles/**, snippets/**, docs/design-system.md, docs/xhs-format.md
 alwaysApply: false
 ---
 
-# 微信公众号工作流约束
+# 内容营销工作流约束
 
-## 排版
+## 微信排版
 
 - `wechat.html` 必须由 `snippets/` 片段拼接，样式遵循 `docs/design-system.md` token
+- 输入成稿：`raw-wechat.md`；legacy 目录可仍用 `raw.md`
 - 禁止在 `wechat.html` 中引入 `<script>`、`<iframe>`、外链 CSS/JS 或非常规标签
 - 禁止为排版自由发明未在 design-system 登记的新样式
 
+## 小红书终稿
+
+- `xhs.md` 遵循 `docs/xhs-format.md`；纯文本四段结构
+- 禁止 HTML、snippets、外链 `<img>`、`**` Markdown 加粗；轻强调用「」
+- 成稿输入为 `raw-xhs.md`
+
 ## 配图
 
-- 统一使用：`<!-- IMAGE: {desc} | 比例 {ratio} | 备注 {optional} -->`
-- 默认不写外链 `<img>`；公众号后台手动上传
+- 微信：`<!-- IMAGE: {desc} | 比例 {ratio} | 备注 {optional} -->`
+- 小红书封面：`<!-- COVER: {desc} | 比例 3:4 | 备注 {optional} -->`
+- 小红书内页：`<!-- IMAGE: {desc} | 比例 3:4 | 备注 {optional} -->`
+- **仅占位**：禁止 GenerateImage、禁止写 `assets/`、默认不写外链 `<img>`
 
 ## 文稿
 
-- `facts.md` / `raw.md` 默认中文
+- `facts.md` / `raw-*.md` 默认中文
 - 语气由用户每次指定，不在规则中写死
 - 禁止编造未在调研来源中出现的功能；不确定写入「待核实」
+- 微信与小红书成稿**独立**，不共用 master 稿
 
 ## 流程
 
-- 须先确认 `facts.md`，再写 `raw.md`；须先确认 `raw.md`，再写 `wechat.html`
+- 须先确认 `facts.md`，再写 `raw-wechat.md` / `raw-xhs.md`
+- 须先**一次**确认平台成稿，再写 `wechat.html` / `xhs.md`
 - 未经用户确认不得跳过卡点生成下游文件

@@ -1,8 +1,10 @@
-# raw.md → snippet 映射表
+# raw-wechat.md → snippet 映射表
+
+输入文件：`raw-wechat.md`；若不存在则回退 legacy `raw.md`。
 
 
 
-| raw.md 结构 | Snippet | 备注 |
+| raw-wechat.md 结构 | Snippet | 备注 |
 
 |-------------|---------|------|
 

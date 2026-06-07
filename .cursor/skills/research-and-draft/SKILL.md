@@ -1,15 +1,15 @@
 ---
 name: research-and-draft
 description: >-
-  Researches local paths or URLs and produces facts.md then Chinese marketing
-  raw.md for WeChat articles. Use when gathering product facts, drafting 公众号
- 成稿, or before layout stage in wechat-article-convertor workflow.
+  Researches local paths or URLs and produces facts.md then platform-specific
+  raw-wechat.md and/or raw-xhs.md. Use when gathering product facts, drafting
+  公众号/小红书成稿, or before layout stage in wechat-article-convertor workflow.
 disable-model-invocation: true
 ---
 
 # Research and Draft
 
-从用户提供的**本地路径**和/或**网站 URL** 调研，产出 `facts.md` 与 `raw.md`。由 `wechat-article-pipeline` 调用；本 Skill 不生成微信 HTML。
+从用户提供的**本地路径**和/或**网站 URL** 调研，产出 `facts.md` 与平台成稿。由 **wechat-article-pipeline** 调用；本 Skill 不生成 `wechat.html` 或 `xhs.md` 终稿。
 
 ## 调研范围（只读）
 
@@ -49,9 +49,9 @@ disable-model-invocation: true
 
 调研完成后**停止**，等待用户确认事实表/大纲（pipeline 卡点 1）。
 
-## 产出 2：`articles/<slug>/raw.md`（用户确认后）
+## 产出 2a：`articles/<slug>/raw-wechat.md`（平台含微信时）
 
-中文营销稿，**Markdown 结构**，**不含**微信 HTML：
+用户确认 `facts.md` 后撰写。中文营销稿，**Markdown 结构**，**不含**微信 HTML：
 
 ```markdown
 # 文章标题
@@ -78,12 +78,21 @@ disable-model-invocation: true
 （文末 CTA 一句）
 ```
 
-- 语气、受众、字数、是否 CTA：按 pipeline 收集的用户输入执行，**不写死**风格
+- 语气、受众、字数、是否 CTA：按 pipeline 收集的**微信**侧输入执行
 - 至少一处 `<!-- IMAGE: {desc} | 比例 {ratio} | 备注 {optional} -->`
 - 功能亮点 3–5 条为宜
+- 与 `raw-xhs.md` **独立撰写**，不共用 master 稿
 
-`raw.md` 完成后**停止**，等待用户确认（pipeline 卡点 2），再交给 `wechat-layout`。
+## 产出 2b：`articles/<slug>/raw-xhs.md`（平台含小红书时）
+
+用户确认 `facts.md` 后撰写。应用 **[xhs-draft](../xhs-draft/SKILL.md)** 规则与模板。
+
+- 语气、字数、配图张数、标签策略：按 pipeline 收集的**小红书**侧输入执行
+
+## 卡点 2
+
+平台所需的成稿文件**都写完**后再**停止**，请用户**一次**确认 `raw-wechat.md` 和/或 `raw-xhs.md`，再交给 **wechat-layout** / **xhs-format**。
 
 ## 大仓库说明
 
-若由 pipeline 并行 `explore` 合并信息，仍以本结构写入单一 `facts.md`，不并行写 `raw.md`。
+若由 pipeline 并行 `explore` 合并信息，仍以本结构写入单一 `facts.md`，不并行写 `raw-*.md`。
