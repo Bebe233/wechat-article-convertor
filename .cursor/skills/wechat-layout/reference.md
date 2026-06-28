@@ -12,13 +12,13 @@
 
 | `【lead】` 行（单独一行，下一行起为导语正文） | `paragraph-lead.html` | 去掉 `【lead】` 标记；仅文首或章节引导段 |
 
-| `【pull】` 行 | `pull-quote.html` | 去掉 `【pull】` 标记；金句单独成段 |
+| `【pull】` 行 | `pull-quote.html` | 去掉 `【pull】` 标记；青绿加粗强调句 |
 
 | `## 【plain】...` | `h2.html` | 裸 H2，宜用于次要大节 |
 
 | `## ...`（默认） | `h2-accent.html` | 色条章节标题，全文宜 3～4 处 |
 
-| `### ...` | `h3.html` | 小节路标 |
+| `### ...` | `h3.html` | H4 小节路标（居中 + 底边线） |
 
 | 普通段落 | `paragraph.html` | 连续段落各用一段 |
 
@@ -33,6 +33,7 @@
 | `【highlight】` 或编辑标注的卖点块 | `highlight.html` | 去掉标记行，内容入 `{{content}}` |
 
 | `【cta】` 行 | `cta.html` | 去掉标记；内容可含 `<a href="https://...">` |
+| `【caption】` 行 | `image-caption.html` | 去掉标记；图下右对齐说明，如「△图为 AI 生成」 |
 | 文末普通引导段 | `paragraph.html` | 放在 CTA 之后 |
 
 | `<!-- IMAGE: ... -->` | 原样插入 HTML | 不包 snippet |
@@ -47,21 +48,25 @@
 
 paragraph-lead(开篇引导)
 
-paragraph(展开)
+quote(开场 hook)
 
-pull-quote(金句)
+paragraph(短段展开)
 
-quote(产品摘要)
+list-item-emoji × 2～3
 
 <!-- IMAGE: ... -->
 
 h2-accent(主章节)
 
-paragraph + h3(小节)
+paragraph + h4-subsection(###)
 
-list-item-emoji × 2～3
+paragraph(数字清单 1、2、3)
 
-highlight(收束)
+pull-quote(强调句)
+
+highlight(注意/卖点)
+
+【caption】图注
 
 divider
 
@@ -83,7 +88,7 @@ cta
 
 - `{{emoji}}`：必填（仅 `list-item-emoji.html`）
 
-- 替换前去除 Markdown 语法符号（`##`、`-` 等），保留加粗为 `<strong>`、斜体为 `<em>`
+- 替换前去除 Markdown 语法符号（`##`、`-` 等），保留加粗为 `<strong style="color:#00997f;font-weight:bold;">`、斜体为 `<em>`
 
 - 列表项 emoji 识别：`- ` 后紧跟 emoji（及可选空格），余下为正文
 

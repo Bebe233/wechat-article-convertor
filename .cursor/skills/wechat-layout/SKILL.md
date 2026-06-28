@@ -27,8 +27,8 @@ disable-model-invocation: true
 
 ## 工作步骤
 
-1. 读取 `raw-wechat.md`（不存在则读 `raw.md`），识别标题（首个 `#` 或文首标题行）、`【lead】`/`【pull】`、`##`/`###`、段落、引用、列表、分割线、highlight 标注块、CTA
-2. 按 [reference.md](reference.md) 选择对应 snippet 文件，读取模板，将 `{{content}}` 替换为内容（保留允许的 `strong`/`em`/`a`）
+1. 读取 `raw-wechat.md`（不存在则读 `raw.md`），识别标题（首个 `#` 或文首标题行）、`【lead】`/`【pull】`/`【caption】`、`##`/`###`、段落、引用、列表、分割线、highlight 标注块、CTA
+2. 按 [reference.md](reference.md) 选择对应 snippet 文件，读取模板，将 `{{content}}` 替换为内容（保留允许的 `strong`/`em`/`a`/`span`；`strong` 默认补 `color:#00997f`）
 3. 将成稿中的配图占位（若有）原样或规范化为 design-system 规定的 `<!-- IMAGE: ... -->` 插入对应位置
 4. 写入 `articles/<slug>/wechat.html`
 5. 交付时说明：全选复制正文、在公众号编辑器粘贴、按注释上传配图
