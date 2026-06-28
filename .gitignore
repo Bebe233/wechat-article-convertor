@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# articles: track template only, ignore local article drafts
+articles/**
+!articles/_example/
+!articles/_example/**
