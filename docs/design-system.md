@@ -38,7 +38,9 @@
 | `--color-text-secondary` | 括号补充、次要说明 | `#888888` |
 | `--color-text-muted` | 图注、出处 | `#8f8f8f` |
 | `--color-heading` | 标题 | `#222222` |
-| `--color-heading-sub` | H4 小节标题 | `#3e3e3e` |
+| `--color-heading-sub` | H4 小节标题（居中） | `#3e3e3e` |
+| `--color-heading-sub-left` | 左对齐长小节标题 | `#157a4f` |
+| `--font-size-h3-left` | 左对齐小节字号 | `17px` |
 | `--color-accent` | 强调/链接/结构线 | `#00997f` |
 | `--color-callout-bg` | 引用/开场块背景 | `rgba(128,128,128,0.05)` |
 | `--color-callout-border` | 引用/开场块左边线 | `rgba(128,128,128,0.075)` |
@@ -68,6 +70,23 @@
 | `--border-h2-accent` | H2 左色条 | `6px solid #00997f` |
 | `--border-h4-accent` | H4 底边线 | `3px solid #00997f` |
 | `--padding-h2-accent` | H2 左内边距 | `0 0 0 15px` |
+| `--color-code-bg` | 公式/代码块背景 | `#0f1b24` |
+| `--color-code-text` | 公式/代码块正文 | `#d6f5e3` |
+| `--color-code-key` | 公式左侧变量名 | `#7fd1ff` |
+| `--font-size-code` | 公式/代码块字号 | `13.5px` |
+| `--line-height-code` | 公式/代码块行高 | `1.7` |
+| `--color-table-header-bg` | 表头背景 | `#00997f` |
+| `--color-table-header-text` | 表头文字 | `#ffffff` |
+| `--color-table-row-alt` | 表格斑马纹 | `#f5faf7` |
+| `--color-table-border` | 表格行分隔 | `#eeeeee` |
+| `--font-size-table` | 表格字号 | `14px` |
+| `--color-kpi-bg` | KPI 卡片背景 | `#effaf3` |
+| `--color-kpi-border` | KPI 卡片边框 | `#c8ecd8` |
+| `--color-kpi-value` | KPI 主数值/标题 | `#00997f` |
+| `--color-kpi-label` | KPI 说明文字 | `#556677` |
+| `--color-tag-bg` | 标签底色 | `#eafaf0` |
+| `--color-tag-text` | 标签文字 | `#00997f` |
+| `--font-size-tag` | 标签字号 | `13px` |
 
 ### Dark 主题 Token（可选变体）
 
@@ -96,7 +115,8 @@
 - **强调句** `pull-quote.html`：`16px` 加粗，`#00997f`，块间距 `20px 16px`（左对齐；用于段内结论句，非居中海报体）
 - **H2** `h2.html`：`20px` 加粗，`#222`，上 `28px` 下 `10px`（`## 【plain】`）
 - **H2 色条** `h2-accent.html`：`20px` 加粗，`#222`，左 border `6px #00997f`，`padding-left: 15px`，`margin: 40px 0`，无背景、无圆角
-- **H4 小节** `h3.html`：`16px` 加粗，`#3e3e3e`，居中，`border-bottom: 3px solid #00997f`，`margin: 10px 60px`，`padding-bottom: 6px`（对应 Markdown `###`）
+- **H4 小节** `h3.html`：`16px` 加粗，`#3e3e3e`，居中，`border-bottom: 3px solid #00997f`，`margin: 10px 60px`，`padding-bottom: 6px`（对应 Markdown `###`；宜短标题）
+- **H3 左对齐** `h3-left.html`：`17px` 加粗，`#157a4f`，左对齐，无底边线，`margin: 24px 16px 10px`（对应 `### 【left】`；适合长小节标题，对齐原版技术文 h3）
 - **引用/开场** `quote.html`：灰底引用块，左 border `10px rgba(128,128,128,0.075)`，背景 `rgba(128,128,128,0.05)`，`13px` / `2`，块间距 `10px 16px 10px 0`
 - **列表项** `list-item.html`：`16px` / `2` / `#222`，圆点 `#00997f`，块间距 `20px 16px`
 - **列表项（Emoji）** `list-item-emoji.html`：同上，`{{emoji}}` 前缀
@@ -104,6 +124,14 @@
 - **高亮框** `highlight.html`：`<blockquote>`，背景 `#fff9e6`，左 border `4px #ffd666`，内边距 `14px 16px`，`16px` 斜体 / `2`，块间距 `20px 16px`（卖点/注意，**非**日常引用）
 - **图注** `image-caption.html`：`13px` / `1.3` / `#8f8f8f`，右对齐，`margin: 0 16px 0 0`
 - **CTA** `cta.html`：居中，`#00997f` 加粗 `17px` / `1.5`，上 `24px` 下 `12px`
+- **公式/代码块** `code-block.html`：深色底 `#0f1b24`，正文 `#d6f5e3`，等宽字体，`13.5px` / `1.7`，`white-space:pre-wrap`，块间距 `14px 16px`，圆角 `8px`；`=` 左侧变量名染 `#7fd1ff`（原版 `.formula .k`）
+- **KPI 卡片** `kpi-card.html`：渐变浅绿底 + 边框 `#c8ecd8`，圆角 `10px`，居中；主行加粗 `#00997f`，说明 `#556677`；**单列堆叠**（公众号双列效果不稳定，默认不用网格）
+- **表格** `table.html`：外层圆角 `8px` + `overflow:hidden` + 轻阴影，**无外框线**；表内 `border-collapse:collapse`；表头 `#00997f` 白字；斑马纹 `#f5faf7`；末行无底边
+- **步骤框** `step-box.html`：浅绿底 `#f5faf7` + 边框 `#d4f0e0`，圆角数字徽章 + 正文（原版 `.stepbox`）
+- **标签列表项** `list-item-tag.html`：段首浅绿标签底 `#eafaf0`、字色 `#00997f`、圆角 `6px`；其后接说明正文（对应原版 `.tag`）
+- **软引用** `soft-quote.html`：灰底圆角块（原版文末 `.quote`），非灰左边线 `quote.html`
+- **居中强调** `pull-center.html`：深绿 `#0a5d3c` 居中加粗句
+- **页脚条** `footer-banner.html`：深蓝底 `#0a3d62` 居中收束（原版 `.foot`）
 
 ### 内联强调（编辑 + 排版规范）
 
@@ -122,7 +150,8 @@
 
 - **色条 H2**（`h2-accent`）：所有 `##` 章节标题的**默认**样式；全文 3～5 个大节为宜
 - **裸 H2**（`## 【plain】`）：须在 `raw-wechat.md` 中显式标注，用于次要章节或附录
-- **H4 小节**（`###` → `h3.html`）：长章节内部的路标，宜短、宜少（每大节 0～3 个）；标题可含「——」连接副题
+- **H4 小节**（`###` → `h3.html`）：长章节内部的短路标，宜短、宜少（每大节 0～3 个）；标题可含「——」连接副题
+- **左对齐小节**（`### 【left】标题` → `h3-left.html`）：标题较长、不宜居中时使用；深绿字色、无底边线，贴近技术拆解文原版 h3
 - **强调句**（`【pull】`）：每 600～1000 字可设 1 处，单独成段、便于扫读；内容为完整结论句
 - **引用块**（`>`）：开篇 hook、专家引言、对话还原；与 `highlight` 区分——后者仅用于卖点/警示
 - **列表**：同章连续 emoji/圆点列表不宜超过 **3 条**；更多内容改为短段落 + `highlight` 或数字清单段落
@@ -136,7 +165,8 @@
 | `pull-quote.html` | `【pull】` 强调句 | 去掉标记行；青绿加粗左对齐句 |
 | `h2.html` | `## 【plain】标题` | 裸章节标题 |
 | `h2-accent.html` | `## 标题`（默认） | 左色条章节大标题 |
-| `h3.html` | `### 标题` | H4 小节（居中 + 底边线） |
+| `h3.html` | `### 标题` | H4 小节（居中 + 底边线；短标题） |
+| `h3-left.html` | `### 【left】标题` | 左对齐长小节（深绿字色，无底边） |
 | `quote.html` | `> 引用` | 开场 hook、专家引言、对话金句 |
 | `list-item.html` | `-` / `*` 无序列表项（无 emoji） | 每条单独一段 |
 | `list-item-emoji.html` | `-` 后以 emoji 开头的列表项 | `{{emoji}}` + 正文 |
@@ -144,6 +174,14 @@
 | `highlight.html` | `【highlight】` 或编辑标注的卖点/注意块 | 黄色警示块；去掉标记行 |
 | `image-caption.html` | `【caption】` 或图下说明 | 右对齐灰字，如「△图为 AI 生成」 |
 | `cta.html` | 文末行动号召 | 链接、关注引导（纯文字） |
+| `code-block.html` | `【code】…【/code】` | 深色等宽公式；左侧变量 `#7fd1ff` |
+| `kpi-card.html` | `【card】标题 \| 说明` | 单列 KPI/信息卡；`{{title}}` + `{{subtitle}}` |
+| `table.html` | Markdown 管道表 | `{{content}}` = 表头+数据行的 `<tr>` HTML |
+| `step-box.html` | `【step】n \| 正文` | 圆点序号步骤框；`{{n}}` + `{{content}}` |
+| `list-item-tag.html` | `【tag】标签 \| 说明` | 浅绿底标签 + 正文 |
+| `soft-quote.html` | `【soft-quote】` | 灰底圆角收束引用 |
+| `pull-center.html` | `【pull-center】` | 居中深绿强调句 |
+| `footer-banner.html` | `【footer】标题 \| 行2 \| 行3` | 深蓝页脚条 |
 
 ### 占位符替换规则
 
@@ -173,7 +211,7 @@
 1. **禁止** `<script>`、`<iframe>`、表单、音视频自动播放等非常规标签
 2. **禁止** 依赖外链 CSS/JS；样式全部内联在 snippet 上
 3. **图片**：须在公众号编辑器内上传；外链图易失效，默认只用 `<!-- IMAGE: ... -->`
-4. **布局**：避免多列、float、复杂 flex；以单列阅读为主（引用卡片等多列布局须转图片）
+4. **布局**：避免多列、float、复杂 flex；KPI 卡**单列堆叠**；信息对照用 `table.html`
 5. **字体**：使用系统字体栈，不嵌入自定义 webfont
 6. **高亮/注意块**：使用 `highlight.html`；日常引用用 `quote.html`，勿混用
 7. **默认语言**：中文；语气由用户每次在 pipeline 输入中指定
