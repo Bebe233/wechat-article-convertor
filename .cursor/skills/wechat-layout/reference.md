@@ -36,6 +36,6 @@
 - `{{title}}` / `{{subtitle}}`：`kpi-card.html`；`footer-banner` 另用 `{{line2}}` / `{{line3}}`
 - `{{tag}}`：`list-item-tag.html`
 - `{{n}}`：`step-box.html` 序号
-- **code-block**：按行处理；若含 `=`，左侧包 `<span style="color:#7fd1ff;">…</span>`
+- **code-block**：按行处理；若含 `=`，左侧包 `<span style="color:#7fd1ff;">…</span>`；多行之间用 `<br>` 连接（勿仅依赖 `\n` + `pre-wrap`）
 - **table**：表头 `th` 青绿底白字；偶数数据行 `#f5faf7`；末行无 `border-bottom`
 - **soft-quote / pull-center**：允许保留显式 `<br>`（成稿中写 `<br>`）

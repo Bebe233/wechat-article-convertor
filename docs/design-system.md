@@ -124,9 +124,9 @@
 - **高亮框** `highlight.html`：`<blockquote>`，背景 `#fff9e6`，左 border `4px #ffd666`，内边距 `14px 16px`，`16px` 斜体 / `2`，块间距 `20px 16px`（卖点/注意，**非**日常引用）
 - **图注** `image-caption.html`：`13px` / `1.3` / `#8f8f8f`，右对齐，`margin: 0 16px 0 0`
 - **CTA** `cta.html`：居中，`#00997f` 加粗 `17px` / `1.5`，上 `24px` 下 `12px`
-- **公式/代码块** `code-block.html`：深色底 `#0f1b24`，正文 `#d6f5e3`，等宽字体，`13.5px` / `1.7`，`white-space:pre-wrap`，块间距 `14px 16px`，圆角 `8px`；`=` 左侧变量名染 `#7fd1ff`（原版 `.formula .k`）
+- **公式/代码块** `code-block.html`：深色底 `#0f1b24`，正文 `#d6f5e3`，等宽字体，`13.5px` / `1.7`，块间距 `14px 16px`，圆角 `8px`；`=` 左侧变量名染 `#7fd1ff`；多行公式用 `<br>` 换行（公众号粘贴对 `pre-wrap` 换行不稳定）
 - **KPI 卡片** `kpi-card.html`：渐变浅绿底 + 边框 `#c8ecd8`，圆角 `10px`，居中；主行加粗 `#00997f`，说明 `#556677`；**单列堆叠**（公众号双列效果不稳定，默认不用网格）
-- **表格** `table.html`：外层圆角 `8px` + `overflow:hidden` + 轻阴影，**无外框线**；表内 `border-collapse:collapse`；表头 `#00997f` 白字；斑马纹 `#f5faf7`；末行无底边
+- **表格** `table.html`：外层圆角 `8px` + `overflow:hidden` + 轻阴影，外框 `1px solid #eeeeee`（与行分隔同色，四边一致）；表内 `border-collapse:collapse`；表头 `#00997f` 白字；斑马纹 `#f5faf7`；末行无底边（外框承担下边缘）
 - **步骤框** `step-box.html`：浅绿底 `#f5faf7` + 边框 `#d4f0e0`，圆角数字徽章 + 正文（原版 `.stepbox`）
 - **标签列表项** `list-item-tag.html`：段首浅绿标签底 `#eafaf0`、字色 `#00997f`、圆角 `6px`；其后接说明正文（对应原版 `.tag`）
 - **软引用** `soft-quote.html`：灰底圆角块（原版文末 `.quote`），非灰左边线 `quote.html`
